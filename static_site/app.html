@@ -1,83 +1,86 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RegenWave — App</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="regenwave-bg">
-      <div class="blob a"></div>
-      <div class="blob b"></div>
+        <div class="blob a"></div>
+        <div class="blob b"></div>
     </div>
     <div id="regenwave-gradient"></div>
 
     <header class="header">
-      <div>
-        <div class="title">RegenWave — Neural Regeneration AI</div>
-        <div class="subtitle">AI-assisted decision system for spinal and axonal injury treatment</div>
-      </div>
-      <div class="small">Built by <strong>HRISHAB SHUKLA</strong></div>
+        <div>
+            <div class="title">RegenWave — Neural Regeneration AI</div>
+            <div class="subtitle">AI-assisted decision system for spinal and axonal injury treatment</div>
+        </div>
+        <div class="small">Built by <strong>HRISHAB SHUKLA</strong></div>
     </header>
 
     <main>
-      <section class="card" style="margin:20px;">
-        <div class="app-header">
-          <div>
-            <h3>Upload Image</h3>
-            <div class="input-row">
-              <input type="file" id="fileInput" accept="image/*">
-              <button id="analyzeBtn" class="btn primary">Analyze</button>
+        <section class="card" style="margin:20px;">
+            <div class="app-header">
+                <div>
+                    <h3>Upload Image</h3>
+                    <div class="input-row">
+                        <input type="file" id="fileInput" accept="image/*">
+                        <button id="analyzeBtn" class="btn primary">Analyze</button>
+                    </div>
+                    <p class="small">Filename must match dataset entries to show analysis.</p>
+                </div>
+                <div id="status" class="small"></div>
             </div>
-            <p class="small">Filename must match dataset entries to show analysis.</p>
-          </div>
-          <div id="status" class="small"></div>
-        </div>
-      </section>
+        </section>
 
-      <section class="card" style="margin:20px;">
-        <h3>Results</h3>
-        <div id="resultArea">
-          <p class="small">No analysis yet. Upload an image and press Analyze.</p>
-        </div>
-      </section>
+        <section class="card" style="margin:20px;">
+            <h3>Results</h3>
+            <div id="resultArea">
+                <p class="small">No analysis yet. Upload an image and press Analyze.</p>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">Open this file in your browser. To share, upload the `static_site` folder to any static host (GitHub Pages, Netlify).</footer>
+    <footer class="footer">Open this file in your browser. To share, upload the `static_site` folder to any static host
+        (GitHub Pages, Netlify).</footer>
 
     <script>
-      // embedded metadata from metadata.json
-      const METADATA = [
-  {"filename":"nerve_001.png","label":"regeneration","chemical":"BDNF","dose":0.2,"penetration":2,"days_until_next":5,"counter_chemicals":"Nogo-A,MAG,OMgp","nerve_state":"damaged"},
-  {"filename":"nerve_002.png","label":"observe","chemical":"NGF","dose":0.0,"penetration":0,"days_until_next":0,"counter_chemicals":"Nogo-A,CSPGs","nerve_state":"healthy"},
-  {"filename":"nerve_003.png","label":"bypass","chemical":"GDNF","dose":0.4,"penetration":3,"days_until_next":3,"counter_chemicals":"Nogo-A,MAG","nerve_state":"severely_damaged"},
-  {"filename":"nerve_004.png","label":"regeneration","chemical":"CNTF","dose":0.3,"penetration":2,"days_until_next":4,"counter_chemicals":"OMgp,Ephrin-B3","nerve_state":"damaged"},
-  {"filename":"nerve_005.png","label":"observe","chemical":"NT-3","dose":0.0,"penetration":0,"days_until_next":0,"counter_chemicals":"Semaphorin 3A,Nogo-A","nerve_state":"healthy"},
-  {"filename":"nerve_006.png","label":"bypass","chemical":"FGF2","dose":0.5,"penetration":3,"days_until_next":5,"counter_chemicals":"MAG,CSPGs","nerve_state":"severely_damaged"},
-  {"filename":"nerve_007.png","label":"regeneration","chemical":"IGF-1","dose":0.2,"penetration":2,"days_until_next":3,"counter_chemicals":"Nogo-A,OMgp,Semaphorin 3A","nerve_state":"damaged"},
-  {"filename":"nerve_008.png","label":"observe","chemical":"BDNF","dose":0.0,"penetration":0,"days_until_next":0,"counter_chemicals":"Ephrin-B3,CSPGs","nerve_state":"healthy"},
-  {"filename":"nerve_009.png","label":"regeneration","chemical":"GDNF","dose":0.3,"penetration":3,"days_until_next":4,"counter_chemicals":"Nogo-A,MAG,OMgp","nerve_state":"damaged"},
-  {"filename":"nerve_010.png","label":"bypass","chemical":"NT-3","dose":0.4,"penetration":3,"days_until_next":5,"counter_chemicals":"Semaphorin 3A,CSPGs","nerve_state":"severely_damaged"}
-];
+        // embedded metadata from metadata.json
+        const METADATA = [
+            { "filename": "nerve_001.png", "label": "regeneration", "chemical": "BDNF", "dose": 0.2, "penetration": 2, "days_until_next": 5, "counter_chemicals": "Nogo-A,MAG,OMgp", "nerve_state": "damaged" },
+            { "filename": "nerve_002.png", "label": "observe", "chemical": "NGF", "dose": 0.0, "penetration": 0, "days_until_next": 0, "counter_chemicals": "Nogo-A,CSPGs", "nerve_state": "healthy" },
+            { "filename": "nerve_003.png", "label": "bypass", "chemical": "GDNF", "dose": 0.4, "penetration": 3, "days_until_next": 3, "counter_chemicals": "Nogo-A,MAG", "nerve_state": "severely_damaged" },
+            { "filename": "nerve_004.png", "label": "regeneration", "chemical": "CNTF", "dose": 0.3, "penetration": 2, "days_until_next": 4, "counter_chemicals": "OMgp,Ephrin-B3", "nerve_state": "damaged" },
+            { "filename": "nerve_005.png", "label": "observe", "chemical": "NT-3", "dose": 0.0, "penetration": 0, "days_until_next": 0, "counter_chemicals": "Semaphorin 3A,Nogo-A", "nerve_state": "healthy" },
+            { "filename": "nerve_006.png", "label": "bypass", "chemical": "FGF2", "dose": 0.5, "penetration": 3, "days_until_next": 5, "counter_chemicals": "MAG,CSPGs", "nerve_state": "severely_damaged" },
+            { "filename": "nerve_007.png", "label": "regeneration", "chemical": "IGF-1", "dose": 0.2, "penetration": 2, "days_until_next": 3, "counter_chemicals": "Nogo-A,OMgp,Semaphorin 3A", "nerve_state": "damaged" },
+            { "filename": "nerve_008.png", "label": "observe", "chemical": "BDNF", "dose": 0.0, "penetration": 0, "days_until_next": 0, "counter_chemicals": "Ephrin-B3,CSPGs", "nerve_state": "healthy" },
+            { "filename": "nerve_009.png", "label": "regeneration", "chemical": "GDNF", "dose": 0.3, "penetration": 3, "days_until_next": 4, "counter_chemicals": "Nogo-A,MAG,OMgp", "nerve_state": "damaged" },
+            { "filename": "nerve_010.png", "label": "bypass", "chemical": "NT-3", "dose": 0.4, "penetration": 3, "days_until_next": 5, "counter_chemicals": "Semaphorin 3A,CSPGs", "nerve_state": "severely_damaged" }
+        ];
 
-      (function(){
-        const fileInput = document.getElementById('fileInput');
-        const analyzeBtn = document.getElementById('analyzeBtn');
-        const status = document.getElementById('status');
-        const resultArea = document.getElementById('resultArea');
+        (function () {
+            const fileInput = document.getElementById('fileInput');
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const status = document.getElementById('status');
+            const resultArea = document.getElementById('resultArea');
 
-        function findMeta(filename){
-          return METADATA.find(m => m.filename === filename);
-        }
+            function findMeta(filename) {
+                return METADATA.find(m => m.filename === filename);
+            }
 
-        function renderResult(meta, imgDataUrl){
-          const days = Array.from({length:15}, (_,i)=>i);
-          const regen = days.map(d => Math.min(1.0, meta.dose * d * 0.8));
-          const inhib = days.map(d => Math.max(0, 1.0 - d * 0.07));
+            function renderResult(meta, imgDataUrl) {
+                const days = Array.from({ length: 15 }, (_, i) => i);
+                const regen = days.map(d => Math.min(1.0, meta.dose * d * 0.8));
+                const inhib = days.map(d => Math.max(0, 1.0 - d * 0.07));
 
-          resultArea.innerHTML = `
+                resultArea.innerHTML = `
             <div class="result-container">
               <div class="left card">
                 <h4>Uploaded Image</h4>
@@ -97,38 +100,36 @@
                 <p><strong>Chemical:</strong> ${meta.chemical}</p>
                 <p><strong>Dose Level:</strong> ${meta.dose}</p>
                 <p><strong>Penetration Depth:</strong> ${meta.penetration} mm</p>
-                ${meta.counter_chemicals?`<p class="warn">Counter-regeneration molecules detected: ${meta.counter_chemicals}</p>`:''}
+                ${meta.counter_chemicals ? `<p class="warn">Counter-regeneration molecules detected: ${meta.counter_chemicals}</p>` : ''}
                 <div class="verdict">RegenWave predicts this treatment maximizes axon regrowth while suppressing inhibitory pathways.</div>
                 <div style="margin-top:12px"><a href="app.html" class="btn ghost">Analyze another image</a></div>
               </div>
             </div>
           `;
 
-          // draw chart
-          const ctx = document.getElementById('chartCanvas').getContext('2d');
-          new Chart(ctx, {
-            type: 'line',
-            data: {
-              labels: days,
-              datasets: [
-                {label: `${meta.chemical} (Regeneration Signal)`, data: regen, borderColor: 'rgba(62,180,255,0.95)', borderWidth:3, fill:false},
-                {label: 'Inhibitory Molecules (Nogo-A / MAG / CSPGs)', data: inhib, borderColor: 'rgba(220,120,255,0.9)', borderWidth:3, fill:false}
-              ]
-            },
-            options: {responsive:true, maintainAspectRatio:false, scales:{x:{title:{display:true,text:'Days After Injury'}}, y:{title:{display:true,text:'Signal Strength'}}}}
-          });
-        }
+                // draw chart
+                const ctx = document.getElementById('chartCanvas').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: days,
+                        datasets: [
+                            { label: `${meta.chemical} (Regeneration Signal)`, data: regen, borderColor: 'rgba(62,180,255,0.95)', borderWidth: 3, fill: false },
+                            { label: 'Inhibitory Molecules (Nogo-A / MAG / CSPGs)', data: inhib, borderColor: 'rgba(220,120,255,0.9)', borderWidth: 3, fill: false }
+                        ]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Days After Injury' } }, y: { title: { display: true, text: 'Signal Strength' } } } }
+                });
+            }
 
-        analyzeBtn.addEventListener('click', ()=>{
-          const f = fileInput.files[0];
-          if(!f){ status.textContent='Please choose a file.'; return; }
-          const meta = findMeta(f.name);
-          if(!meta){ status.textContent='Filename not found in dataset.'; return; }
-          status.textContent = `Found metadata for ${f.name}`;
-          const reader = new FileReader();
-          reader.onload = (e)=> renderResult(meta, e.target.result);
-          reader.readAsDataURL(f);
-        });
-      })();
-
-
+            analyzeBtn.addEventListener('click', () => {
+                const f = fileInput.files[0];
+                if (!f) { status.textContent = 'Please choose a file.'; return; }
+                const meta = findMeta(f.name);
+                if (!meta) { status.textContent = 'Filename not found in dataset.'; return; }
+                status.textContent = `Found metadata for ${f.name}`;
+                const reader = new FileReader();
+                reader.onload = (e) => renderResult(meta, e.target.result);
+                reader.readAsDataURL(f);
+            });
+        })();

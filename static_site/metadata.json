@@ -1,12 +1,102 @@
 [
-  {"filename":"nerve_001.png","label":"regeneration","chemical":"BDNF","dose":0.2,"penetration":2,"days_until_next":5,"counter_chemicals":"Nogo-A,MAG,OMgp","nerve_state":"damaged"},
-  {"filename":"nerve_002.png","label":"observe","chemical":"NGF","dose":0.0,"penetration":0,"days_until_next":0,"counter_chemicals":"Nogo-A,CSPGs","nerve_state":"healthy"},
-  {"filename":"nerve_003.png","label":"bypass","chemical":"GDNF","dose":0.4,"penetration":3,"days_until_next":3,"counter_chemicals":"Nogo-A,MAG","nerve_state":"severely_damaged"},
-  {"filename":"nerve_004.png","label":"regeneration","chemical":"CNTF","dose":0.3,"penetration":2,"days_until_next":4,"counter_chemicals":"OMgp,Ephrin-B3","nerve_state":"damaged"},
-  {"filename":"nerve_005.png","label":"observe","chemical":"NT-3","dose":0.0,"penetration":0,"days_until_next":0,"counter_chemicals":"Semaphorin 3A,Nogo-A","nerve_state":"healthy"},
-  {"filename":"nerve_006.png","label":"bypass","chemical":"FGF2","dose":0.5,"penetration":3,"days_until_next":5,"counter_chemicals":"MAG,CSPGs","nerve_state":"severely_damaged"},
-  {"filename":"nerve_007.png","label":"regeneration","chemical":"IGF-1","dose":0.2,"penetration":2,"days_until_next":3,"counter_chemicals":"Nogo-A,OMgp,Semaphorin 3A","nerve_state":"damaged"},
-  {"filename":"nerve_008.png","label":"observe","chemical":"BDNF","dose":0.0,"penetration":0,"days_until_next":0,"counter_chemicals":"Ephrin-B3,CSPGs","nerve_state":"healthy"},
-  {"filename":"nerve_009.png","label":"regeneration","chemical":"GDNF","dose":0.3,"penetration":3,"days_until_next":4,"counter_chemicals":"Nogo-A,MAG,OMgp","nerve_state":"damaged"},
-  {"filename":"nerve_010.png","label":"bypass","chemical":"NT-3","dose":0.4,"penetration":3,"days_until_next":5,"counter_chemicals":"Semaphorin 3A,CSPGs","nerve_state":"severely_damaged"}
+    {
+        "filename": "nerve_001.png",
+        "label": "regeneration",
+        "chemical": "BDNF",
+        "dose": 0.2,
+        "penetration": 2,
+        "days_until_next": 5,
+        "counter_chemicals": "Nogo-A,MAG,OMgp",
+        "nerve_state": "damaged"
+    },
+    {
+        "filename": "nerve_002.png",
+        "label": "observe",
+        "chemical": "NGF",
+        "dose": 0.0,
+        "penetration": 0,
+        "days_until_next": 0,
+        "counter_chemicals": "Nogo-A,CSPGs",
+        "nerve_state": "healthy"
+    },
+    {
+        "filename": "nerve_003.png",
+        "label": "bypass",
+        "chemical": "GDNF",
+        "dose": 0.4,
+        "penetration": 3,
+        "days_until_next": 3,
+        "counter_chemicals": "Nogo-A,MAG",
+        "nerve_state": "severely_damaged"
+    },
+    {
+        "filename": "nerve_004.png",
+        "label": "regeneration",
+        "chemical": "CNTF",
+        "dose": 0.3,
+        "penetration": 2,
+        "days_until_next": 4,
+        "counter_chemicals": "OMgp,Ephrin-B3",
+        "nerve_state": "damaged"
+    },
+    {
+        "filename": "nerve_005.png",
+        "label": "observe",
+        "chemical": "NT-3",
+        "dose": 0.0,
+        "penetration": 0,
+        "days_until_next": 0,
+        "counter_chemicals": "Semaphorin 3A,Nogo-A",
+        "nerve_state": "healthy"
+    },
+    {
+        "filename": "nerve_006.png",
+        "label": "bypass",
+        "chemical": "FGF2",
+        "dose": 0.5,
+        "penetration": 3,
+        "days_until_next": 5,
+        "counter_chemicals": "MAG,CSPGs",
+        "nerve_state": "severely_damaged"
+    },
+    {
+        "filename": "nerve_007.png",
+        "label": "regeneration",
+        "chemical": "IGF-1",
+        "dose": 0.2,
+        "penetration": 2,
+        "days_until_next": 3,
+        "counter_chemicals": "Nogo-A,OMgp,Semaphorin 3A",
+        "nerve_state": "damaged"
+    },
+    {
+        "filename": "nerve_008.png",
+        "label": "observe",
+        "chemical": "BDNF",
+        "dose": 0.0,
+        "penetration": 0,
+        "days_until_next": 0,
+        "counter_chemicals": "Ephrin-B3,CSPGs",
+        "nerve_state": "healthy"
+    },
+    {
+        "filename": "nerve_009.png",
+        "label": "regeneration",
+        "chemical": "GDNF",
+        "dose": 0.3,
+        "penetration": 3,
+        "days_until_next": 4,
+        "counter_chemicals": "Nogo-A,MAG,OMgp",
+        "nerve_state": "damaged"
+    },
+    {
+        "filename": "nerve_010.png",
+        "label": "bypass",
+        "chemical": "NT-3",
+        "dose": 0.4,
+        "penetration": 3,
+        "days_until_next": 5,
+        "counter_chemicals": "Semaphorin 3A,CSPGs",
+        "nerve_state": "severely_damaged"
+    }
 ]

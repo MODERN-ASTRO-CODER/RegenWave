@@ -1,53 +1,57 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RegenWave - Result</title>
     <link rel="stylesheet" href="/static/styles.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="regenwave-bg">
-      <div class="blob a"></div>
-      <div class="blob b"></div>
+        <div class="blob a"></div>
+        <div class="blob b"></div>
     </div>
     <div id="regenwave-gradient"></div>
 
     <header class="rw-header">
-      <h1 class="rw-title">RegenWave – Neural Regeneration AI</h1>
-      <p class="rw-sub">AI-assisted decision system for spinal and axonal injury treatment</p>
+        <h1 class="rw-title">RegenWave – Neural Regeneration AI</h1>
+        <p class="rw-sub">AI-assisted decision system for spinal and axonal injury treatment</p>
     </header>
 
     <main class="result-container">
-      <section class="card left">
-        <h3>Uploaded Image</h3>
-        <img src="data:image/png;base64,{{ img_b64 }}" alt="uploaded" style="max-width:100%; border-radius:8px;">
-        <h4>Analysis</h4>
-        <ul>
-          <li><strong>Predicted Nerve State:</strong> {{ row['nerve_state'] }}</li>
-          <li><strong>Recommended Action:</strong> {{ row['label'] }}</li>
-          <li><strong>Primary Chemical:</strong> {{ row['chemical'] }}</li>
-          <li><strong>Next Dose (days):</strong> {{ row['days_until_next'] }}</li>
-        </ul>
-      </section>
+        <section class="card left">
+            <h3>Uploaded Image</h3>
+            <img src="data:image/png;base64,{{ img_b64 }}" alt="uploaded" style="max-width:100%; border-radius:8px;">
+            <h4>Analysis</h4>
+            <ul>
+                <li><strong>Predicted Nerve State:</strong> {{ row['nerve_state'] }}</li>
+                <li><strong>Recommended Action:</strong> {{ row['label'] }}</li>
+                <li><strong>Primary Chemical:</strong> {{ row['chemical'] }}</li>
+                <li><strong>Next Dose (days):</strong> {{ row['days_until_next'] }}</li>
+            </ul>
+        </section>
 
-      <section class="card right">
-        <h3>Regeneration vs Inhibitory Signals</h3>
-        <img src="data:image/png;base64,{{ plot_b64 }}" alt="plot" style="width:100%; border-radius:8px;">
+        <section class="card right">
+            <h3>Regeneration vs Inhibitory Signals</h3>
+            <img src="data:image/png;base64,{{ plot_b64 }}" alt="plot" style="width:100%; border-radius:8px;">
 
-        <h4>Treatment Recommendation</h4>
-        <p><strong>Chemical:</strong> {{ row['chemical'] }}</p>
-        <p><strong>Dose Level:</strong> {{ row['dose'] }}</p>
-        <p><strong>Penetration Depth:</strong> {{ row['penetration'] }} mm</p>
-        {% if row['counter_chemicals'] %}
-          <p class="warn">Counter-regeneration molecules detected: {{ row['counter_chemicals'] }}</p>
-        {% endif %}
+            <h4>Treatment Recommendation</h4>
+            <p><strong>Chemical:</strong> {{ row['chemical'] }}</p>
+            <p><strong>Dose Level:</strong> {{ row['dose'] }}</p>
+            <p><strong>Penetration Depth:</strong> {{ row['penetration'] }} mm</p>
+            {% if row['counter_chemicals'] %}
+            <p class="warn">Counter-regeneration molecules detected: {{ row['counter_chemicals'] }}</p>
+            {% endif %}
 
-        <div class="verdict">RegenWave predicts this treatment maximizes axon regrowth while suppressing inhibitory pathways.</div>
-        <div style="margin-top:12px"><a href="/app" class="btn ghost">Analyze another image</a></div>
-      </section>
+            <div class="verdict">RegenWave predicts this treatment maximizes axon regrowth while suppressing inhibitory
+                pathways.</div>
+            <div style="margin-top:12px"><a href="/app" class="btn ghost">Analyze another image</a></div>
+        </section>
     </main>
 
     <footer class="rw-footer">Built by <strong>HRISHAB SHUKLA</strong></footer>
-  </body>
+</body>
+
 </html>
