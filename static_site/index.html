@@ -5,28 +5,57 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RegenWave — Welcome</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="RegenWave — AI-assisted decision support for neural regeneration treatments.">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div id="regenwave-bg">
-        <div class="blob a"></div>
-        <div class="blob b"></div>
-    </div>
-    <div id="regenwave-gradient"></div>
-
-    <main class="welcome-container">
-        <div class="welcome-card">
-            <h1>Welcome to RegenWave</h1>
-            <p class="lead">A modern decision-support prototype for neural regeneration treatment planning.</p>
-            <p class="small">Built and owned by <strong>HRISHAB SHUKLA</strong></p>
-            <div class="cta-row">
-                <a href="app.html" class="btn primary">Continue</a>
-                <a href="styles.css" class="btn ghost">View Styles</a>
-            </div>
+    <div class="site-root">
+        <div id="regenwave-bg" aria-hidden>
+            <div class="blob a"></div>
+            <div class="blob b"></div>
         </div>
-    </main>
 
+        <header class="hero">
+            <div class="hero-inner">
+                <h1 class="brand">RegenWave</h1>
+                <p class="tag">AI-assisted decision support for neural regeneration treatment planning</p>
+                <div class="hero-cta">
+                    <a class="btn primary" href="app.html">Launch App</a>
+                    <a class="btn ghost" href="static_site/index.html">Preview</a>
+                </div>
+                <p class="credit">Built by <strong>HRISHAB SHUKLA</strong></p>
+            </div>
+        </header>
+
+        <main class="features">
+            <section class="card feature">
+                <h2>Visual Analysis</h2>
+                <p>Upload microscopy images and get instant model-driven treatment recommendations and timelines.</p>
+            </section>
+
+            <section class="card feature">
+                <h2>Interactive Charts</h2>
+                <p>Explore regeneration vs inhibitory signals across time — client-side charts for quick iteration.</p>
+            </section>
+
+            <section class="card feature">
+                <h2>Static & Hostable</h2>
+                <p>Fully static site — drop into GitHub Pages, Netlify or any static host.</p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div>© <span id="year"></span> RegenWave — Built by HRISHAB SHUKLA</div>
+            <div class="foot-note">Open <code>static_site/app.html</code> to try the demo locally.</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
