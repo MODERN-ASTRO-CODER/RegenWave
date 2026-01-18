@@ -1,4 +1,5 @@
 name: Deploy static site to GitHub Pages
+name: Deploy static site to GitHub Pages
 
 on:
   push:
